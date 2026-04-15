@@ -15,7 +15,16 @@ def find_coords(char, grid):
 # --- PERSON 2: ENCRYPTION PROCESS ---
 def encrypt(plaintext, p_grid1, c_grid1, c_grid2, p_grid2):
     """Encodes the original message into ciphertext."""
-    # Person 2: Insert encryption logic here
+    plaintext = plaintext.upper().replace("J", "I")
+    plaintext = "".join(filter(str.isalpha, plaintext))
+    
+    
+    if len(plaintext) % 2 != 0:
+        plaintext += "X"
+        
+    ciphertext = ""
+    return "" #placeholder for now
+    
     pass
 
 
