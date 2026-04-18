@@ -35,18 +35,3 @@ def find_coords(char, grid):
     return None
 
 
-# ================= TESTIM =================
-if __name__ == "__main__":
-    key = "KEYWORD"
-
-    grid = generate_grid(key)
-
-    print("Matrica 5x5:\n")
-    for row in grid:
-        print(" ".join(row))
-
-    print("\nKoordinatat e shkronjave:")
-    print("A ->", find_coords("A", grid))
-    print("K ->", find_coords("K", grid))
-    print("Z ->", find_coords("Z", grid))
-    
