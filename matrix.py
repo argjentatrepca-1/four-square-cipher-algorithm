@@ -12,7 +12,7 @@ def generate_grid(key=""):
         if char in alphabet and char not in used:
             used.append(char)
 
-    # 2 pjesa tjetar e alfabetit
+    # 2 pjesa tjeter e alfabetit
     for char in alphabet:
         if char not in used:
             used.append(char)
