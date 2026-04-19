@@ -1,0 +1,35 @@
+from matrix import generate_grid
+from encryption import encrypt
+from decryption import decrypt
+
+def preprocess_text(text):
+text = text.upper().replace("J", "I")
+text = "".join(filter(str.isalpha, text))
+if len(text) % 2 != 0:
+text += "X"
+return text
+
+if __name__ == "__main__":
+print("Four-Square Cipher - Integration & Testing\n")
+
+key1 = "KEYWORD"
+key2 = "SECRET"
+
+p_grid1 = generate_grid("")
+p_grid2 = generate_grid("")
+c_grid1 = generate_grid(key1)
+c_grid2 = generate_grid(key2)
+
+plaintext = "HELLO WORLD"
+print("Plaintext:", plaintext)
+
+encrypted = encrypt(plaintext, p_grid1, c_grid1, c_grid2, p_grid2)
+print("Encrypted:", encrypted)
+
+decrypted = decrypt(encrypted, p_grid1, c_grid1, c_grid2, p_grid2)
+print("Decrypted:", decrypted)
+
+if preprocess_text(plaintext) == decrypted:
+print("\nTEST PASSED")
+else:
+print("\nTEST FAILED")
