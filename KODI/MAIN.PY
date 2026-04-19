@@ -1,34 +1,44 @@
-import re
-
-# --- PERSON 1: GRID GENERATION & COORDINATES ---
-def generate_grid(key=""):
-    """Builds a 5x5 matrix using a keyword, combining I/J."""
-    # Person 1: Insert logic to create the 5x5 grid here
-    pass
-
-def find_coords(char, grid):
-    """Returns the (row, col) of a character in a specific grid."""
-    # Person 1: Insert coordinate lookup logic here
-    pass
-
-
-# --- PERSON 2: ENCRYPTION PROCESS ---
-def encrypt(plaintext, p_grid1, c_grid1, c_grid2, p_grid2):
-    """Encodes the original message into ciphertext."""
-    # Person 2: Insert encryption logic here
-    pass
-
-
-# --- PERSON 3: DECRYPTION PROCESS ---
-def decrypt(ciphertext, p_grid1, c_grid1, c_grid2, p_grid2):
-    """Converts ciphertext back into a readable message."""
-    # Person 3: Insert decryption logic here
-    pass
-
-
 # --- PERSON 4: INTEGRATION & TESTING ---
+from matrix import generate_grid
+from encryption import encrypt
+from decryption import decrypt
+
+
+def preprocess_text(text):
+    text = text.upper().replace("J", "I")
+    text = "".join(filter(str.isalpha, text))
+    if len(text) % 2 != 0:
+        text += "X"
+    return text
+
+
+def main():
+    print("Four-Square Cipher - Integration & Testing\n")
+
+    key1 = input("Enter key 1: ")
+    key2 = input("Enter key 2: ")
+
+    p_grid1 = generate_grid("")
+    p_grid2 = generate_grid("")
+    c_grid1 = generate_grid(key1)
+    c_grid2 = generate_grid(key2)
+
+    plaintext = input("Enter plaintext: ")
+    processed = preprocess_text(plaintext)
+
+    print("Processed Plaintext:", processed)
+
+    encrypted = encrypt(processed, p_grid1, c_grid1, c_grid2, p_grid2)
+    print("Encrypted:", encrypted)
+
+    decrypted = decrypt(encrypted, p_grid1, c_grid1, c_grid2, p_grid2)
+    print("Decrypted:", decrypted)
+
+    if processed == decrypted:
+        print("\nTEST PASSED")
+    else:
+        print("\nTEST FAILED")
+
+
 if __name__ == "__main__":
-    # This section ties everything together.
-    # Person 4: Call the functions above to verify the project works.
-    print("Four-Square Cipher System is ready for testing...")
-    pass
+    main()
