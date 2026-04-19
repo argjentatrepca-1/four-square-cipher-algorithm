@@ -12,6 +12,11 @@ def preprocess_text(text):
     return text
 
 
+# --- PERSON 2: ENCRYPTION PROCESS ---
+def encrypt(plaintext, p_grid1, c_grid1, c_grid2, p_grid2):
+    """Encodes the original message into ciphertext."""
+    
+    pass
 def main():
     print("Four-Square Cipher - Integration & Testing\n")
 
