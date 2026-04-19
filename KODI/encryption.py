@@ -1,3 +1,4 @@
+from matrix import find_coords
 def encrypt(plaintext, p_grid1, c_grid1, c_grid2, p_grid2):
     """Encodes the original message into ciphertext."""
     plaintext = plaintext.upper().replace("J", "I")
