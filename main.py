@@ -1,3 +1,4 @@
+# --- PERSON 4: INTEGRATION & TESTING ---
 from matrix import generate_grid
 from encryption import encrypt
 from decryption import decrypt
